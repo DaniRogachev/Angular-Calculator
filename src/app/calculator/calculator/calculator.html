@@ -1,0 +1,64 @@
+<div class="calculator-container">
+  <h1>Calculator</h1>
+  
+  <div class="calculator-body">
+    <div class="display">
+      <div class="previous-expression">{{ previousExpression }}</div>
+      <input type="text" class="expression-input" [value]="displayValue" readonly>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
+    
+    <div class="keypad">
+      <button class="digit-btn" (click)="appendDigit('7')">7</button>
+      <button class="digit-btn" (click)="appendDigit('8')">8</button>
+      <button class="digit-btn" (click)="appendDigit('9')">9</button>
+      <button class="operator-btn" (click)="appendOperator('/')">÷</button>
+      <button class="operator-btn" (click)="backspace()">⌫</button>
+      
+      <button class="digit-btn" (click)="appendDigit('4')">4</button>
+      <button class="digit-btn" (click)="appendDigit('5')">5</button>
+      <button class="digit-btn" (click)="appendDigit('6')">6</button>
+      <button class="operator-btn" (click)="appendOperator('*')">×</button>
+      <button class="operator-btn" (click)="appendOperator('^')">^</button>
+      
+      <button class="digit-btn" (click)="appendDigit('1')">1</button>
+      <button class="digit-btn" (click)="appendDigit('2')">2</button>
+      <button class="digit-btn" (click)="appendDigit('3')">3</button>
+      <button class="operator-btn" (click)="appendOperator('-')">−</button>
+      <button class="operator-btn" (click)="appendOpenBracket()">(</button>
+      
+      <button class="digit-btn" (click)="appendDigit('0')">0</button>
+      <button class="digit-btn" (click)="appendDecimalPoint()">.</button>
+      <button class="equals-btn" (click)="calculate()">=</button>
+      <button class="operator-btn" (click)="appendOperator('+')">+</button>
+      <button class="operator-btn" (click)="appendCloseBracket()">)</button>
+      
+      <button class="clear-btn" (click)="clear()">CLEAR</button>
+    </div>
+  </div>
+  
+  <div class="history-toggle">
+      <button class="history-btn" (click)="toggleHistory()">
+        {{ showHistory ? 'Hide History' : 'Show History' }}
+      </button>
+    </div>
+    <div *ngIf="showHistory">
+      <ng-container *ngIf="history.length > 0; then historyList; else emptyHistory"></ng-container>
+
+      <ng-template #historyList>
+        <div class="history-list">
+          <div *ngFor="let calc of history" class="history-item" (click)="loadHistory(calc)">
+            {{ calc.expression }} = {{ calc.result }}
+          </div>
+        </div>
+        <button class="delete-history-btn" (click)="clearHistory()">Delete History</button>
+      </ng-template>
+
+      <ng-template #emptyHistory>
+        <div class="history-empty">History is empty</div>
+      </ng-template>
+    </div>
+    <div class="back-link">
+    <a routerLink="/home">Back to Home</a>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.calculator-body {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+}
+
+.display {
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.previous-expression {
+  font-size: 1rem;
+  color: #777;
+  text-align: right;
+  min-height: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.expression-input {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 1.5rem;
+  text-align: right;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  outline: none;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
+
+.keypad button {
+  padding: 15px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.digit-btn {
+  background-color: #fff;
+  color: #333;
+}
+
+.digit-btn:hover {
+  background-color: #eeeeee;
+}
+
+.operator-btn {
+  background-color: #f8b400;
+  color: #fff;
+}
+
+.operator-btn:hover {
+  background-color: #d99c00;
+}
+
+.equals-btn {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.equals-btn:hover {
+  background-color: #3367d6;
+}
+
+.clear-btn {
+  background-color: #ff5252;
+  color: #fff;
+  grid-column: span 5;
+}
+
+.clear-btn:hover {
+  background-color: #ea4545;
+}
+
+.back-link {
+  margin-top: 1.5rem;
+}
+
+.back-link a {
+  color: #4285f4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+.history-toggle {
+  margin-top: 1.5rem;
+}
+
+.history-btn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: #4285f4;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.history-btn:hover {
+  text-decoration: underline;
+}
+
+.history-list {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.history-item {
+  font-size: 1rem;
+  color: #777;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.history-item:hover {
+  text-decoration: underline;
+}
+
+.delete-history-btn {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #ff5252;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin: 0.5rem auto;
+}
+
+.delete-history-btn:hover {
+  text-decoration: underline;
+}
+
+.history-empty {
+  font-size: 1rem;
+  color: #777;
+  margin: 0.5rem 0;
+  text-align: center;
+}
