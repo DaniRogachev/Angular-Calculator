@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgIf, NgForOf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Calculation } from '../calculator.model';
 import { FormsModule } from '@angular/forms';
 import { CalculatorService } from '../calculator.service';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-calculator',
   standalone: true,
-  imports: [RouterLink, FormsModule, NgIf, NgForOf],
+  imports: [RouterLink, FormsModule, CommonModule],
   templateUrl: './calculator.html',
   styleUrl: './calculator.css'
 })
